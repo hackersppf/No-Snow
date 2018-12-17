@@ -36,3 +36,5 @@
 - 1 RGB led module
 - 1 x MPU9250+BMP280 10DOF Acceleration/Gyroscope/Compass Sensor Module - GY-91
 - 1 x PLA filament
+## Πρόχειρο σχέδιο κατασκευής
+![](https://github.com/hackersppf/No-Snow/blob/master/no%20snow%20%CF%80%CF%81%CE%BF%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF.png)
