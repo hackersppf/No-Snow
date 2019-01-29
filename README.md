@@ -25,16 +25,17 @@
 - Για την ειδοποίηση των ανθρώπων που κινούνται κοντά στο όχημα μας, θα χρησιμοποιήσουμε ένα buzzer και φώτα led.
 - Για το υπολογισμό της θέσης του οχήματος μας μέσα στην αυλή θα χρησιμοποιήσουμε ένα γυροσκόπιο, το οποίο θα μας δίνει την σχετική θέση του οχήματος από το σημείο εκκίνησης.
 ## Λίστα βασικού εξοπλισμού
-- 1 x Arduino uno.
-- 1 x L293D Motor Driver Shield.
-- 1 x 4WD Arduino chassis με 4 gear motors και ρόδες.
-- 1 x servo motor
-- 1 x APDS-9960 RGB Gesture Sensor for Arduino, για την αναγνώριση του χρώματος στο έδαφος.
-- 3 x HC-SR04 Ultrasonic Module
-- 4 PIR sensors
-- 1 x Buzzer
-- 1 RGB led module
-- 1 x MPU9250+BMP280 10DOF Acceleration/Gyroscope/Compass Sensor Module - GY-91
-- 1 x PLA filament
+- 1 x [Arduino UNO R3 ATmega328P Board](https://www.cableworks.gr/ilektronika/arduino-and-microcontrollers/microcontrollers/compatible-boards/arduino-uno-r3-atmega328p-board-usb-cable/ "Arduino UNO R3 ATmega328P Board") - 7,48 ευρώ.
+- 1 x [L293D Motor Driver Shield](https://www.cableworks.gr/ilektronika/arduino-and-microcontrollers/motors/drivers/l293d-motor-driver-shield-expansion-board-for-arduino/ "L293D Motor Driver Shield") - 4,87 ευρώ
+- 1 x [4WD Smart Robot Car Chassis Kit for Arduino](https://www.cableworks.gr/ilektronika/arduino-and-microcontrollers/kit/4wd-smart-robot-car-chassis-kit-for-arduino-with-speed-encoder-for-arduino/ "4WD Smart Robot Car Chassis Kit for Arduino") - 18,49 ευρώ
+- 2 x [MG90S Micro Metal Gear 9g Servo](https://www.cableworks.gr/ilektronika/arduino-and-microcontrollers/motors/servo/mg90s-micro-metal-gear-9g-servo-for-arduino-rc-180-degrees/ "MG90S Micro Metal Gear 9g Servo") - 10 ευρώ
+- 1 x [APDS-9960 RGB Sensor](https://www.cableworks.gr/ilektronika/arduino-and-microcontrollers/sensors/distance/apds-9960-rgb-gesture-sensor-for-arduino/ "APDS-9960 RGB Sensor") - 6,20 ευρώ
+- 3 x [HC-SR04 Ultrasonic Module](https://www.cableworks.gr/ilektronika/arduino-and-microcontrollers/sensors/sound/hc-sr04-ultrasonic-module-distance-measuring-transducer-sensor-for-arduino/ "HC-SR04 Ultrasonic Module") - 6 ευρώ
+- 4 [PIR Motion Detector Module HC-SR501](https://www.cableworks.gr/ilektronika/arduino-and-microcontrollers/sensors/distance/pir-motion-detector-module-hc-sr501-for-arduino/ "PIR Motion Detector Module HC-SR501") - 8,76 ευρώ
+- 1 x [Active Buzzer Alarm Module](https://www.cableworks.gr/ilektronika/arduino-and-microcontrollers/outputs/active-buzzer-alarm-module-for-arduino/ "Active Buzzer Alarm Module") - 2,19 ευρώ
+- 1 x [3W High-Power LED Module](https://www.cableworks.gr/ilektronika/arduino-and-microcontrollers/outputs/keyes-3w-high-power-led-module-for-arduino/ "3W High-Power LED Module") - 2,59 ευρώ
+- 1 x [MPU9250+BMP280 10DOF Acceleration/Gyroscope/Compass Sensor Module - GY-91](https://www.cableworks.gr/ilektronika/arduino-and-microcontrollers/sensors/tilt/mpu9250bmp280-10dof-acceleration-gyroscope-compass-sensor-module-gy-91/ "MPU9250+BMP280 10DOF Acceleration/Gyroscope/Compass Sensor Module - GY-91") - 12,19 ευρώ
+- 1 x [1Kg Filament PM Fluorescent Yellow PLA 1.75mm](https://www.cableworks.gr/3d-printers/filaments/filament-pm/pla/1kg-filament-pm-fluorescent-yellow-pla-1.75mm/ "1Kg Filament PM Fluorescent Yellow PLA 1.75mm") - 21,01 ευρώ
+**Συνολικό κόστος: 99,78 ευρώ**
 ## Πρόχειρο σχέδιο κατασκευής
 ![](https://github.com/hackersppf/No-Snow/blob/master/no%20snow%20%CF%80%CF%81%CE%BF%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF.png)
