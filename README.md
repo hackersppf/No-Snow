@@ -36,6 +36,6 @@
 - 1 x [3W High-Power LED Module](https://www.cableworks.gr/ilektronika/arduino-and-microcontrollers/outputs/keyes-3w-high-power-led-module-for-arduino/ "3W High-Power LED Module") - 2,59 ευρώ
 - 1 x [MPU9250+BMP280 10DOF Acceleration/Gyroscope/Compass Sensor Module - GY-91](https://www.cableworks.gr/ilektronika/arduino-and-microcontrollers/sensors/tilt/mpu9250bmp280-10dof-acceleration-gyroscope-compass-sensor-module-gy-91/ "MPU9250+BMP280 10DOF Acceleration/Gyroscope/Compass Sensor Module - GY-91") - 12,19 ευρώ
 - 1 x [1Kg Filament PM Fluorescent Yellow PLA 1.75mm](https://www.cableworks.gr/3d-printers/filaments/filament-pm/pla/1kg-filament-pm-fluorescent-yellow-pla-1.75mm/ "1Kg Filament PM Fluorescent Yellow PLA 1.75mm") - 21,01 ευρώ
-**Συνολικό κόστος: 99,78 ευρώ**
+- **Συνολικό κόστος: 99,78 ευρώ**
 ## Πρόχειρο σχέδιο κατασκευής
 ![](https://github.com/hackersppf/No-Snow/blob/master/no%20snow%20%CF%80%CF%81%CE%BF%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF.png)
