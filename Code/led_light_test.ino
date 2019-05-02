@@ -3,17 +3,15 @@
  αναβοσβήνει το φως κάθε δευτερόλεπτο
 */
 
-//Σταθερές
-#define pinLight 29    // Το φως είναι συνδεδεμένο στο pin 29
+#define pinL 29             //Ονομάζω pinL το pin 29 στο οποίο είναι συνδεδεμένο το ηχείο
 
 void setup() {
-  pinMode(pinLight,OUTPUT); //Ορίζουμε το pin από το φως ως OUTPUT
+  pinMode(pinL,OUTPUT);     //Ορίζουμε το pin από το φως ως έξοδος
 }
 
-void loop() {
-  //Ανάβουμε και σβήνουμε το φως κάθε δευτερόλεπτο
-  digitalWrite(pinLight,HIGH);
-  delay(1000);
-  digitalWrite(pinLight,LOW);
-  delay(1000);
+void loop() {               //Ανάβουμε και σβήνουμε το φως κάθε δευτερόλεπτο
+  digitalWrite(pinL,HIGH);  //Ενεργοποιώ το φως
+  delay(1000);              //Περιμένω ένα δευτερόλεπτο
+  digitalWrite(pinL,LOW);   //Απενεργοποιώ το φως 
+  delay(1000);              //Περιμένω ένα δευτερόλεπτο
 }
