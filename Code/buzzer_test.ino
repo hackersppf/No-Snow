@@ -3,16 +3,15 @@
  Το ενεργοποιεί κάθε δευτερόλεπτο
 */
 
-//Σταθερές
-#define pinSound 27    // Το ηχείο είναι συνδεδεμένο στο pin 27
+#define pinS 27             //Ονομάζω pinS το pin 27 στο οποίο είναι συνδεδεμένο το ηχείο
 
 void setup() {
-  pinMode(pinSound,OUTPUT); //Ορίζουμε το pin του ηχείου ως OUTPUT
+  pinMode(pinS,OUTPUT);     //Ορίζουμε το pin του ηχείου ως έξοδος 
 }
 
-void loop() {
-  digitalWrite(pinSound,HIGH);
-  delay(1000);
-  digitalWrite(pinSound,LOW);
-  delay(1000);
+void loop() {               //Μέσα στο loop ενεργοποιώ και απενεργοποιώ διαρκώς το ηχείο
+  digitalWrite(pinS,HIGH);  //Ενεργοποιώ το ηχείο
+  delay(1000);              //Περιμένω 1 δευτερόλεπτο
+  digitalWrite(pinS,LOW);   //Απενεργοποιώ το ηχείο
+  delay(1000);              //Περιμένω 1 δευτερόλεπτο
 }
