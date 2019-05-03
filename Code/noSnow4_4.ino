@@ -14,7 +14,8 @@
 
 //Ορίζουμε τα pin στα οποία έχουμε συνδέσει τις μονάδες σαν σταθερές με την εντολή define
 //Έτσι αντί να χρησιμοποιούμε πλέον τους αριθμούς των pin στο πρόγραμμα μας θα χρησιμοποιούμε
-//τα ονόματα που δίνουμε παρακάτω
+//τα ονόματα που δίνουμε παρακάτω. Μπορούμε να πάμε στα προγράμματα δοκιμών και να 
+//αντιγράψουμε τις εντολές #define από εκεί
 #define pinT A14      //Αισθητήρας θερμοκρασίας DHT11 είναι στο pin Α14
 #define pinR A15      //Αισθητήρας βροχής είναι στο pin Α15
 #define pinD 23       //Αισθητήρας απόστασης είναι στο pin 23
@@ -24,27 +25,24 @@
 #define pinServoM 10  //To Servo του μαχαιριού είναι τοποθετημένο στην θέση SERVO2 του οδηγού που αντιστοιχεί στο digital pin 10
 #define pinServoA 9   //To Servo της αλατιέρας είναι τοποθετημένο στην θέση SERVO1 του οδηγού που αντιστοιχεί στο digital pin 9
 
-#define STEPPER_PIN_1 35
-#define STEPPER_PIN_2 37
-#define STEPPER_PIN_3 39
-#define STEPPER_PIN_4 41
-int step_number = 0;
-
 //Δημιουργούμε αντικείμενα - μεταβλητές, τα οποία έχουν τις δικές τους συναρτήσεις
+//Μπορούμε να πάμε στα προγράμματα δοκιμών και να αντιγράψουμε τις δηλώσεις αντικειμένων από εκεί
 Servo front;                            //Κινητήρας servo που ελέγχει το μαχαίρι
 Servo back;                             //Κινητήρας servo που ελέγχει τον διασκορπιστή αλατιού
-//Stepper salt(1019, 35, 37, 39, 41);     //Κινητήρας βηματικός που ελέγχει τον κοχλία μεταφοράς αλατιού. Δηλώνουμε τα βήματα (1019) και σε ποια pin είναι συνδεδεμένος
+Stepper salt(1019, 35, 37, 39, 41);     //Κινητήρας βηματικός που ελέγχει τον κοχλία μεταφοράς αλατιού. Δηλώνουμε τα βήματα (1019) και σε ποια pin είναι συνδεδεμένος
 dht DHT;                                //Μονάδα αισθητήρα θερμοκρασίας
 MPU6050 imu(Wire);                      //Μονάδα IMU
 NewPing sonar(pinD, pinD, 400);         //Μονάδα αισθητήρα απόστασης υπέρηχων. Δηλώνουμε σε ποιο pin είναι τα TRIG και ECHO (στο ίδιο pin) καθώς και το μέγιστο όριο απόστασης 
 
 //Δηλώνουμε τους 4 κινητήρες του οχήματος σε ποιες θέσεις είναι τοποθετημένα
+//Μπορούμε να πάμε στα προγράμματα δοκιμών και να αντιγράψουμε τις εντολές από εκεί
 AF_DCMotor motorFR(1);   //Ονομάζουμε motorFR τον κινητήρα που είναι στην θέση 1 του οδηγού κινητήρων και είναι στο μπροστά δεξί μέρος
 AF_DCMotor motorFL(2);   //Ονομάζουμε motorFL τον κινητήρα που είναι στην θέση 2 του οδηγού κινητήρων και είναι στο μπροστά αριστερό μέρος
 AF_DCMotor motorBL(3);   //Ονομάζουμε motorΒL τον κινητήρα που είναι στην θέση 3 του οδηγού κινητήρων και είναι στο πίσω αριστερό μέρος
 AF_DCMotor motorBR(4);   //Ονομάζουμε motorBR τον κινητήρα που είναι στην θέση 4 του οδηγού κινητήρων και είναι στο πίσω δεξί μέρος
 
-//Μεταβλητές που θα χρειαστούμε
+//Μεταβλητές που θα χρειαστούμε. Μπορούμε να πάμε στα προγράμματα δοκιμών και να 
+//αντιγράψουμε τις μεταβλητές από εκεί
 int pir;                //Εδώ θα διαβάζουμε την τωρινή τιμή από τον αισθητήρα PIR
 float cm;               //Εδώ θα διαβάζουμε την τιμή από τον αισθητήρα απόστασης σε εκατοστά
 float rain;             //Εδώ θα διαβάζουμε την τιμή του αισθητήρα βροχής/χιονιού
@@ -63,7 +61,7 @@ void start() {
   imu.calcGyroOffsets(true);    //Ζητάμε από την μονάδα να κάνει την αρχική ρύθμιση (θέλει 3 δευτερόλεπτα)
   digitalWrite(pinL,LOW);       //Μόλις η ρύθμιση τελειώσει σβήνουμε το φως.
   front.attach(pinServoM);      //Ενεργοποιώ τον κινητήρα servo του μαχαιριού
-  front.write(100);              //Ανεβάζω το μαχαίρι ;
+  front.write(100);             //Ανεβάζω το μαχαίρι ;
 }
 
 //Η συνάρτηση checkIce θα ελέγχει τις συνθήκες θερμοκρασίας και βροόπτωσης/χιονόπτωσης και
@@ -72,10 +70,10 @@ void checkIce() {
   DHT.read11(pinT);                           //Διαβάζουμε τις τιμές από τον αισθητήρα θερμοκρασίας
   temp = DHT.temperature;                     //Παίρνουμε την θερμοκρασία στην μεταβλητή temp
   rain = map(analogRead(pinR),0,1023,100,0);  //Παίρνουμε την τιμή της βροχόπτωσης/χιονόπτωσης
-  if (temp > 0 && rain < 90) {                //Αν η θερμοκρασίας είναι κάτω από 0 και υπάρχει βροόπτωση/χιονόπτωση πάνω από 20% τότε
-    ice = true;                              //Κάνω την μεταβλητή του πάγου σε true  
+  if (temp < 0 && rain > 50) {                //Αν η θερμοκρασίας είναι κάτω από 0 και υπάρχει βροόπτωση/χιονόπτωση πάνω από 50% τότε
+    ice = true;                               //Κάνω την μεταβλητή του πάγου σε true  
   } else {                                    //Αλλιώς
-    ice = false;                             //Κάνω την μεταβλητή του πάγου σε false  
+    ice = false;                              //Κάνω την μεταβλητή του πάγου σε false  
   }
 }
 
@@ -88,10 +86,10 @@ void checkPir() {
     motorFL.run(RELEASE);       //Απενεργοποιώ τους κινητήρες 
     motorBL.run(RELEASE);       //Απενεργοποιώ τους κινητήρες 
     digitalWrite(pinL,HIGH);    //Ανάβω το φως 
-    //digitalWrite(pinS,HIGH);    //Ανοίγω το ηχείο 
+    digitalWrite(pinS,HIGH);    //Ανοίγω το ηχείο 
   } else {                      //Αλλιώς αν δεν υπάρχει κίνηση 
     digitalWrite(pinL,LOW);     //Κλείνω το φως 
-    //digitalWrite(pinS,LOW);   //Κλείνω το ηχείο 
+    digitalWrite(pinS,LOW);   //Κλείνω το ηχείο 
     motorFR.run(FORWARD);       //Ενεργοποιώ τους κινητήρες
     motorBR.run(FORWARD);       //Ενεργοποιώ τους κινητήρες
     motorFL.run(FORWARD);       //Ενεργοποιώ τους κινητήρες
@@ -103,7 +101,7 @@ void checkPir() {
 //Έτσι αν το όχημα μας κινείται μπροστά θα την γράψουμε ως drive(0), ενώ αν επιστρέφει 
 //θα την γράψουμε ως drive(180)
 void drive(float m) {       
-  front.write(150);              //Κατεβάζω το μαχαίρι 
+  front.write(150);             //Κατεβάζω το μαχαίρι 
   motorFR.run(FORWARD);         //Ενεργοποιώ τους κινητήρες
   motorBR.run(FORWARD);         //Ενεργοποιώ τους κινητήρες
   motorFL.run(FORWARD);         //Ενεργοποιώ τους κινητήρες
@@ -138,7 +136,7 @@ void drive(float m) {
   motorBR.run(RELEASE);         //Aπενεργοποιούμε τους 4 κινητήρες
   motorFL.run(RELEASE);         //Απενεργοποιούμε τους 4 κινητήρες
   motorBL.run(RELEASE);         //Απενεργοποιούμε τους 4 κινητήρες
-  front.write(100);              //Ανεβάζω το μαχαίρι 
+  front.write(100);             //Ανεβάζω το μαχαίρι 
 }
 
 //Η συνάρητση turnLeft στρίβει το όχημα μας αριστερά μέχρι να φτάσει τις m μοίρες
@@ -186,82 +184,24 @@ void setup() {
   pinMode(pinS,OUTPUT);   //Ορίζουμε το pin του ηχείου ως έξοδο
   pinMode(pinL,OUTPUT);   //Ορίζουμε το pin του φωτός ως έξοδο
   pinMode(pinP, INPUT);   //Ορίζουμε το pin του αισθητήρα PIR ως είσοδο
-  pinMode(STEPPER_PIN_1, OUTPUT);
-  pinMode(STEPPER_PIN_2, OUTPUT);
-  pinMode(STEPPER_PIN_3, OUTPUT);
-  pinMode(STEPPER_PIN_4, OUTPUT);
   
   //Τώρα ξεκινάν οι οδηγίες μας
   start();        //Βήμα 1ο Αρχικοποιώ το όχημα
   checkIce();     //Βήμα 2ο Ελέγχω τις συνθήκες θερμοκρασίας - υγρασίας για το αν υπάρχει πάγος
-  drive(0);
   
+  //Οι οδηγίες που ακολουθούν καθαρίζουν έναν διάδρομο στην αυλή του σχολείου 
+  //Μπορούμε να τις βάλουμε σε επανάληψη για να καθαρίσουμε περισσότερη επιφάνεια
+  //Στα άμεσα σχέδια μας είναι να βελτιώσουμε τις οδηγίες ώστε να καθαρίζουν όλη την αυλή 
+  drive(0);       //Βήμα 3ο Στέλνω το όχημα σε ευθεία μέχρι να βρει τον τοίχο
+  delay(1000);    //Περιμένω 1 δευτερόλεπτο
+  turnLeft(90);   //Βήμα 4ο Στρίβω αριστερά 90 μοίρες
+  delay(1000);
+  drive(90);      //Βήμα 5ο Οδηγώ σε ευθεία μέχρι να βρω τον τοίχο
+  delay(1000);
+  turnLeft(180);  //Βήμα 6ο Στρίβω αριστερά 180 μοίρες
+  delay(1000);
+  drive(180);     //Βήμα 7ο Οδηγώ σε ευθεία μέχρι να βρω τον τοίχο 
 }
-
-
-void OneStep(bool dir){
-    if(dir){
-switch(step_number){
-  case 0:
-  digitalWrite(STEPPER_PIN_1, HIGH);
-  digitalWrite(STEPPER_PIN_2, LOW);
-  digitalWrite(STEPPER_PIN_3, LOW);
-  digitalWrite(STEPPER_PIN_4, LOW);
-  break;
-  case 1:
-  digitalWrite(STEPPER_PIN_1, LOW);
-  digitalWrite(STEPPER_PIN_2, HIGH);
-  digitalWrite(STEPPER_PIN_3, LOW);
-  digitalWrite(STEPPER_PIN_4, LOW);
-  break;
-  case 2:
-  digitalWrite(STEPPER_PIN_1, LOW);
-  digitalWrite(STEPPER_PIN_2, LOW);
-  digitalWrite(STEPPER_PIN_3, HIGH);
-  digitalWrite(STEPPER_PIN_4, LOW);
-  break;
-  case 3:
-  digitalWrite(STEPPER_PIN_1, LOW);
-  digitalWrite(STEPPER_PIN_2, LOW);
-  digitalWrite(STEPPER_PIN_3, LOW);
-  digitalWrite(STEPPER_PIN_4, HIGH);
-  break;
-} 
-  }else{
-    switch(step_number){
-  case 0:
-  digitalWrite(STEPPER_PIN_1, LOW);
-  digitalWrite(STEPPER_PIN_2, LOW);
-  digitalWrite(STEPPER_PIN_3, LOW);
-  digitalWrite(STEPPER_PIN_4, HIGH);
-  break;
-  case 1:
-  digitalWrite(STEPPER_PIN_1, LOW);
-  digitalWrite(STEPPER_PIN_2, LOW);
-  digitalWrite(STEPPER_PIN_3, HIGH);
-  digitalWrite(STEPPER_PIN_4, LOW);
-  break;
-  case 2:
-  digitalWrite(STEPPER_PIN_1, LOW);
-  digitalWrite(STEPPER_PIN_2, HIGH);
-  digitalWrite(STEPPER_PIN_3, LOW);
-  digitalWrite(STEPPER_PIN_4, LOW);
-  break;
-  case 3:
-  digitalWrite(STEPPER_PIN_1, HIGH);
-  digitalWrite(STEPPER_PIN_2, LOW);
-  digitalWrite(STEPPER_PIN_3, LOW);
-  digitalWrite(STEPPER_PIN_4, LOW);
- 
-  
-} 
-  }
-step_number++;
-  if(step_number > 3){
-    step_number = 0;
-  }
-}
-
 
 void loop() {
 }
